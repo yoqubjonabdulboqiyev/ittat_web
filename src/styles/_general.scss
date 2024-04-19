@@ -1,0 +1,40 @@
+.container-fluid {
+     max-width: 1320px;
+     margin   : 0 auto;
+     padding  : 0 40px;
+
+     @include Media($screen-small-phone) {
+          padding: 0 20px;
+     }
+}
+
+.section {
+     &--full-screen {
+          min-height: 1024px;
+          position  : relative;
+     }
+}
+
+.screen-height {
+     min-height: 100vh;
+}
+
+.arrow-link {
+     width: fit-content;
+
+     a>div {
+          display    : flex;
+          align-items: center;
+     }
+}
+
+.simple-button {
+     svg {
+          transition: transform 250ms ease;
+     }
+     &:hover {
+          svg {
+               transform: translateX(8px);
+          }
+     }
+}

@@ -1,0 +1,225 @@
+.background-white {
+     background-color: white;
+}
+
+.menu {
+     min-width         : 100%;
+     // height         : calc(100vh - 88px);
+     // top            : 88px;
+     height            : 100vh;
+     display           : flex;
+     align-items       : center;
+     justify-content   : center;
+     position          : fixed;
+     z-index           : 1000;
+
+     justify-content: space-evenly;
+     column-gap     : 289px;
+
+     transition      : opacity 2s;
+     transition-delay: 1s;
+
+     &.hidden {
+          display: none;
+          opacity: 0;
+     }
+
+     &.open {
+          animation-name    : fadeShow;
+          animation-duration: 1s;
+     }
+
+
+     @include Media($screen-laptop) {
+          column-gap: 150px;
+
+     }
+
+     @include Media($screen-large-phone) {
+          padding        : 68px 40px 20px;
+          column-gap     : initial;
+          justify-content: space-between;
+     }
+
+     @include Media($screen-small-phone) {
+          & .menu {
+               &__left {
+                    li {
+                         font-size: 24px;
+                    }
+               }
+     
+               &__right {
+                    li {
+                         font-size: 14px;
+                    }
+               }
+          }
+     
+          overflow: auto;
+
+          flex-direction : column;
+          gap            : 30px;
+          justify-content: center;
+          align-items    : flex-start;
+
+          height : calc(100vh - 68px);
+          top    : 68px;
+          padding: 0 40px 68px;
+
+          .menu__left {
+               padding-top: 100px;
+          }
+
+          .menu__right {
+               margin-left   : 20px;
+               padding-bottom: 40px;
+
+               .down__right {
+                    margin-top: 30px;
+               }
+          }
+     }
+
+     ol {
+          list-style-type: none;
+     }
+}
+
+.burger-menu {
+     cursor: pointer;
+     width : 40px;
+     height: 40px;
+     margin: -8px -9.5px -8px 0;
+
+     display        : flex;
+     justify-content: center;
+     align-items    : center;
+
+}
+
+.menu__left {
+     li {
+          font-style : normal;
+          font-weight: 700;
+          font-size  : 48px;
+
+          &:not(:last-of-type) {
+               margin-bottom: 32px;
+          }
+
+          @media only screen and (max-width: 900px) {
+               font-size: 32px;
+          }
+
+
+
+          a {
+               color           : #000000;
+               padding         : 6px 20px;
+               text-decoration : none;
+               transition      : 0.6s;
+               background-color: transparent;
+
+               &:hover {
+                    background-color: #000000;
+                    color           : white;
+               }
+          }
+
+
+
+     }
+
+     li:last-child {
+          color: #0872f5;
+     }
+
+
+
+}
+
+.menu__right {
+
+     li {
+          font-style : normal;
+          font-weight: 700;
+          font-size  : 18px;
+          color      : #141414;
+
+          &:not(:last-of-type) {
+               margin-bottom: 16px;
+          }
+
+
+          @media only screen and (max-width: 900px) {
+               font-size: 18px;
+          }
+
+          a {
+               color           : #000000;
+               text-decoration : none;
+               transition      : 3s;
+               background-color: transparent;
+
+               &:hover {
+                    text-decoration-line : underline;
+                    text-decoration-style: solid;
+               }
+          }
+
+     }
+
+     .title {
+          color        : #a2a2a2;
+          margin-bottom: 16px;
+     }
+
+     .phone-email {
+          font-weight: 500;
+     }
+
+     .down__right {
+          margin-top: 130px;
+     }
+}
+
+.menu-wrapper {
+     position     : fixed;
+     z-index      : 999;
+     top          : -3rem;
+     right        : -3rem;
+     height       : 3rem;
+     width        : 3rem;
+     box-shadow   : 0px 1px 8px rgba(0, 0, 0, 0.08);
+     border-radius: 50%;
+
+     transition            : transform 0.70s;
+     background-color      : white;
+     
+     @include Media($screen-small-phone) {
+          transition            : transform 0.5s;
+     }
+
+     &.open {
+          transition: transform 1s !important;
+          transform : scale(80)
+     }
+}
+
+@keyframes fadeShow {
+     0% {
+          display: flex;
+          opacity: 0;
+     }
+
+     40% {
+          display: flex;
+          opacity: 0;
+     }
+
+     100% {
+          opacity: 1;
+     }
+
+}

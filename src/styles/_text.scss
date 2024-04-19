@@ -1,0 +1,63 @@
+h1,
+h2,
+h4 {
+
+     font-weight: 700;
+}
+
+h1 {
+     font-size    : 60px;
+     line-height  : 125%;
+     margin-bottom: 45px;
+}
+
+h2 {
+     font-size  : 42px;
+     line-height: 140%;
+}
+
+h4 {
+     font-size  : 22px;
+     line-height: 150%;
+}
+
+
+p.desc {
+     font-weight: 400;
+     font-size  : 20px;
+     line-height: 160%;
+}
+
+.top-text {
+     font-weight: 700;
+     font-size  : 24px;
+     line-height: 33px;
+}
+
+@include Media($screen-large-phone) {
+     h1, h2.big {
+          font-size: 42px;
+     }
+
+     h2 {
+          font-size: 32px;
+     }
+
+     h4 {
+          font-size: 18px;
+     }
+
+.top-text {
+          font-size: 20px;
+     }
+}
+@include Media($screen-small-phone) {
+     h1 {
+          font-size: 36px;
+     }
+}
+@include Media(420px) {
+     h1 {
+          font-size: 32px;
+     }
+}

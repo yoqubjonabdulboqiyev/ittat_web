@@ -1,0 +1,101 @@
+.nav {
+  position: fixed;
+  z-index: 1001;
+  right: 0;
+  left: 0;
+  backdrop-filter: saturate(180%) blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 1s;
+
+  // burger-menu animation start ////////////////////////
+  .nav__icon {
+    position: relative;
+    margin-top: 12px;
+  }
+
+  .nav__icon,
+  .nav__icon::before,
+  .nav__icon::after {
+    display: inline-block;
+    width: 30px;
+    height: 3px;
+    background-color: $black;
+  }
+
+  .nav__icon::before,
+  .nav__icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: all 200ms;
+  }
+
+  .nav__icon::before {
+    top: -12px;
+  }
+
+  .nav__icon::after {
+    top: 12px;
+  }
+  .nav-btn-container:hover {
+    cursor: pointer;
+  }
+  .nav__button {
+    position: relative;
+    cursor: pointer;
+  }
+
+  &.open .nav__button .nav__icon {
+    background-color: transparent;
+  }
+
+  &.open .nav__button .nav__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &.open .nav__button .nav__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+
+  // burger-menu animation end ////////////////////////
+
+  .container-fluid {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    justify-content: space-between;
+    margin: 0;
+    width: 100%;
+
+    .lang-menu-container {
+      height: 28px;
+      gap: 2rem;
+
+      .nav__button {
+        margin-bottom: 8px;
+      }
+    }
+
+    @include Media($screen-small-phone) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+}
+
+.invisible-for-seo {
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+.burger-menu {
+  position: relative;
+  z-index: 100;
+}

@@ -1,0 +1,23 @@
+// simple button
+.simple-button {
+
+     &:hover,
+     &:focus {
+          .right-arrow-svg {
+               path {
+                    fill: white;
+               }
+          }
+     }
+
+     .right-arrow-svg {
+          margin-left: 16px;
+
+          path {
+               transition: fill 0.25s ease 0s;
+               fill      : $secondary;
+
+          }
+     }
+}
+
