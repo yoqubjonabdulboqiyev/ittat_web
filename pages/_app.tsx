@@ -25,14 +25,14 @@ function App({ Component, pageProps }: AppProps) {
         <Head>
           <title>IT TAT</title>
           <link rel="icon" href="/logo.png" />
-          <meta name="title" content={SEO_DATA.uz} />
+          <meta name="title" content={"IT TAT o'quv markazi"} />
           <meta name="description" content={SEO_DATA.uz} />
 
-          <meta name="twitter:title" content="IT TAT" />
+          <meta name="twitter:title" content="IT TAT o'quv markazi" />
           <meta name="twitter:description" content={SEO_DATA.uz} />
           <meta name="twitter:image" content="" />
 
-          <meta name="og:title" content="IT TAT" />
+          <meta name="og:title" content="IT TAT o'quv markazi" />
           <meta name="og:description" content={SEO_DATA.uz} />
           <meta name="og:image" content="" />
 
